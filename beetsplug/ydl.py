@@ -149,6 +149,7 @@ class YdlPlugin(BeetsPlugin):
             print("[ydl] Calling youtube-dl")
 
         youtubedl_config = self.config.get('youtubedl_options')
+        youtubedl_config.get('youtubedl_options')
         youtubedl_config['keepvideo'] = self.config.get('keep_files')
         y = YoutubeDL(youtubedl_config)
 
