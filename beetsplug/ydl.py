@@ -65,7 +65,7 @@ class YdlPlugin(BeetsPlugin):
                 'keepvideo': False,
                 'cachedir': self.cache_dir,
                 'outtmpl': self.outtmpl,
-                'restrictfilenames': True,
+                'restrictfilenames': False,
                 'ignoreerrors': True,
                 'nooverwrites': True,
                 'writethumbnail': True,
