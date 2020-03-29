@@ -20,7 +20,9 @@ from pathlib import Path
 from shutil import copyfile
 from xdg import BaseDirectory
 from youtube_dl import YoutubeDL
+from youtube_dl.utils import sanitize_filename
 from hashlib import md5
+
 import glob
 import json
 import os
@@ -203,7 +205,8 @@ class YdlPlugin(BeetsPlugin):
             return False
 
     def get_file_path(self, ext):
-        return self.outtmpl % { 'id': self.info.get('id'), 'title': self.info.get('title'), 'ext': ext }
+        title = sanitize_filename(self.info.get('title'), restricted=self.config.get('youtubedl_options')['restrictfilenames'])
+        return self.outtmpl % { 'id': self.info.get('id'), 'title': title, 'ext': ext }
 
     def is_album(self):
         return self.fullalbum_stripped or len(self.tracks) > 1
