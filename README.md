@@ -1,5 +1,3 @@
-![Travis CI](https://api.travis-ci.org/vmassuchetto/beets-ydl.svg?branch=master)
-
 # beets ydl
 
 Download audio from youtube-dl sources and import into beets
