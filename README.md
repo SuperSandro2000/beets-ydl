@@ -13,6 +13,10 @@ Download audio from youtube-dl sources and import into beets
     Aerobitch - Short Music for Short People - Steamroller Blues
     [...]
 
+## Improvements of this fork
+
+Downloaded files are named after the video title to easily use the ``fromfilename`` plugin within beets.
+
 ## Installation
 
     pip install beets-ydl
