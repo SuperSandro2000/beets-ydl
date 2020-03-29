@@ -58,6 +58,7 @@ class YdlPlugin(BeetsPlugin):
 
         # Default options
         self._config = {
+            'interactive': True,
             'urls': [],
             'verbose': False,
             'youtubedl_options': {
@@ -279,6 +280,9 @@ class YdlPlugin(BeetsPlugin):
 
         if not self.is_album():
             beet_cmd.extend(['--singletons'])
+
+        if not self.config.get('interactive'):
+            beet_cmd.extend(['-q'])
 
         if os.path.exists(self.outdir):
             beet_cmd.extend([self.outdir])

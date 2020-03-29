@@ -16,6 +16,7 @@ Download audio from youtube-dl sources and import into beets
 ## Improvements of this fork
 
 Downloaded files are named after the video title to easily use the ``fromfilename`` plugin within beets.
+The import can be made non-interactive which best works together with strong_rec_thresh.
 
 ## Installation
 
@@ -34,6 +35,7 @@ ydl:
     download: True         # download files from sources after getting information,
     split_files: True      # try to split album files into separate tracks,
     import: True           # import files on youtube-dl after downloading and splitting,
+    interactive: True      # whether beets should ask autotagger questions. This requires strong_rec_thresh to be configured to be usefull.
     youtubedl_options: {}  # youtube-dl available options -- https://git.io/fN0c7
     urls: []               # list of default urls to download when no arguments are provided, you
                            # can provide a playlist to get checked every time
