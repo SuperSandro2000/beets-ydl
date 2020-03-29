@@ -52,7 +52,7 @@ class YdlPlugin(BeetsPlugin):
         self.search_query = "https://www.youtube.com/results?search_query="
         self.config_dir = config.config_dir()
         self.cache_dir = self.config_dir + "/ydl-cache"
-        self.outtmpl = self.cache_dir + "/%(id)s/%(id)s.%(ext)s"
+        self.outtmpl = self.cache_dir + "/%(id)s/%(title)s.%(ext)s"
 
         # Default options
         self._config = {
@@ -203,7 +203,7 @@ class YdlPlugin(BeetsPlugin):
             return False
 
     def get_file_path(self, ext):
-        return self.outtmpl % { 'id': self.info.get('id'), 'ext': ext }
+        return self.outtmpl % { 'id': self.info.get('id'), 'title': self.info.get('title'), 'ext': ext }
 
     def is_album(self):
         return self.fullalbum_stripped or len(self.tracks) > 1
