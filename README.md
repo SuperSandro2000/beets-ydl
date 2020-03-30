@@ -15,8 +15,8 @@ Download audio from youtube-dl sources and import into beets
 
 ## Improvements of this fork
 
-Downloaded files are named after the video title to easily use the ``fromfilename`` plugin within beets.
-The import can be made non-interactive which best works together with strong_rec_thresh.
+- Downloaded files are named after the video title to easily use the ``fromfilename`` plugin within beets.
+- The import can be made non-interactive which best works together with strong_rec_thresh.
 
 ## Installation
 
